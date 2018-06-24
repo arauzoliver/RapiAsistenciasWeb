@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RapiAsistencias</title>
+    <!--Se agrega dependencia bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!--Se agrega dependencias de Firestore-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDaUb9DFmDwEm_R9e40oWZg12hQAGCkQB4",
+            authDomain: "rapiasitencias.firebaseapp.com",
+            databaseURL: "https://rapiasitencias.firebaseio.com",
+            projectId: "rapiasitencias",
+            storageBucket: "rapiasitencias.appspot.com",
+            messagingSenderId: "65857970656"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+</head>
+
+<body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar navbar-dark fixed-top bg-danger text-white white-space: nowrap shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Rapi Asistencias</a>
+        <div class="form-inline">
+            <input id="email2" type="email" placeholder="Ingresa email" class="form-control form-control-sm mr-sm-2">
+            <input id="password2" type="password" placeholder="Ingresa contraseña" class="form-control form-control-sm mr-sm-2">
+            <button class="btn btn-success my-2 my-sm-0 btn-sm" onclick="Acceso()">Acceder</button>
+            <button class="btn btn-primary my-2 my-sm-0 btn-sm ml-2 mr-2" data-toggle="modal" data-target="#exampleModal">Registrar</button>
+        </div>
+    </nav>
+
+    <br>
+    <!--Se agrega ventana modal para registrar usuarios-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro de nuevo usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    <input id="email" type="email" placeholder="Ingresa email" class="form-control">
+                    <div class="mt-2 "></div>
+                    <input id="password" type="password" placeholder="Ingresa contraseña" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="Registro()" data-dismiss="modal">Proceder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Mensaje">
+    </div>
+
+    <!--Se agregan dependencias de Jquery con bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script src="FirebaseModel.js"></script>
+</body>
+
+</html>
